@@ -1,0 +1,19 @@
+{{>partials/header}}
+{{#Felipe.showName}} <p>oi</p> {{/Felipe.showName}}
+  {{Felipe.name}}
+
+  Sou velho?
+  {{#oldAge}} Sim sou {{/oldAge}}
+  <hr/>
+<h2>Produtos:</h2>
+<ul>
+{{#products}}
+ {{>partials/productItem}}
+{{/products}}
+</ul>
+<hr/>
+
+  <p>Em Cartaz: {{user.title}}</p>
+  {{user.title}}
+  <img src={{user.src}} />
+{{>partials/footer}}
