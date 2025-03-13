@@ -1,5 +1,9 @@
 import { Request, Response } from "express";
+import { Product } from "../models/Product";
+
 export const home = (req: Request, res: Response) => {
+  let list = Product.getAll();
+  let expansiveList = Product.getPriceAfter(25);
   let user = {
     title: "Peaky Blinders Sangue Apostas e Navalhas",
     src: "https://m.media-amazon.com/images/M/MV5BM2ZiNThlNzItNmY3Ny00NjA2LWJlMjItNTk1NDI3MDMyMTk4XkEyXkFqcGc@._V1_.jpg",
@@ -21,20 +25,8 @@ export const home = (req: Request, res: Response) => {
     user,
     Felipe,
     oldAge,
-    products: [
-      {
-        title: "ProdutoX",
-        price: 10,
-      },
-      {
-        title: "ProdutoY",
-        price: 20,
-      },
-      {
-        title: "ProdutoZ",
-        price: 30,
-      },
-    ],
+    products: list,
+    expensive: expansiveList,
     frasesDoDia: ["ola", "oi"],
   });
 };

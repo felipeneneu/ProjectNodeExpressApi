@@ -13,6 +13,15 @@
 </ul>
 <hr/>
 
+  <hr/>
+<h2>Produtos Mais Caros:</h2>
+<ul>
+{{#expensive}}
+ {{>partials/productItem}}
+{{/expensive}}
+</ul>
+<hr/>
+
   <p>Em Cartaz: {{user.title}}</p>
   {{user.title}}
   <img src={{user.src}} />

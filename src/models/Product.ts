@@ -16,6 +16,10 @@ const data: Product[] = [
     title: "ProdutoZ",
     price: 30,
   },
+  {
+    title: "iPhone",
+    price: 1000,
+  },
 ];
 
 export const Product = {
@@ -23,12 +27,6 @@ export const Product = {
     return data;
   },
   getPriceAfter: (price: number): Product[] => {
-    return data.filter((item) => {
-      if (item.price >= price) {
-        return true;
-      } else {
-        return false;
-      }
-    });
+    return data.filter((item) => item.price >= price);
   },
 };
